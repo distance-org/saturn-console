@@ -1,0 +1,26 @@
+<div class="weui-cells widget-post-list-wrap">
+    <div class="weui-cell" v-for="item in list">
+        <div class="weui-cell__bd">
+            <div class="cell-headnote">
+                <div class="cell-category">{{item.category}}</div>
+                <div class="cell-mark">
+                    <template v-for="mark in item.marks">
+                        {{mark}}
+                    </template>
+                </div>
+            </div>
+            <div class="cell-core-content">
+                {{item.content}}
+            </div>
+            <div class="cell-imgs" v-if="item.images && item.images.length" >
+                <img :src="img" alt="" v-for="img in item.images">
+            </div>
+
+            <div class="cell-footnote">
+                <span>{{item.author}}</span>
+                <span>{{item.createTime}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>
